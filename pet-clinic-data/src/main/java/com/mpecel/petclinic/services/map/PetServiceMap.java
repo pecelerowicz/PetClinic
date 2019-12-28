@@ -5,7 +5,7 @@ import com.mpecel.petclinic.services.CrudService;
 
 import java.util.Set;
 
-public class PerServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
     @Override
     public Set<Pet> findAll() {
         return super.findAll();

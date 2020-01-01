@@ -1,11 +1,11 @@
 package com.mpecel.petclinic.services.map;
 
 import com.mpecel.petclinic.model.Owner;
-import com.mpecel.petclinic.services.CrudService;
+import com.mpecel.petclinic.services.OwnerService;
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override
     public Set<Owner> findAll() {
@@ -32,4 +32,8 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
         super.deleteById(id);
     }
 
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;    // tbd
+    }
 }

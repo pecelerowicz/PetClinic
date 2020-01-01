@@ -4,8 +4,7 @@ import com.mpecel.petclinic.model.Owner;
 import com.mpecel.petclinic.model.Vet;
 import com.mpecel.petclinic.services.OwnerService;
 import com.mpecel.petclinic.services.VetService;
-import com.mpecel.petclinic.services.map.OwnerServiceMap;
-import com.mpecel.petclinic.services.map.VetServiceMap;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -15,9 +14,10 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    @Autowired
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override

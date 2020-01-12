@@ -17,7 +17,7 @@ public class Owner extends Person {
     @Column(name = "telephone")
     private String telephone;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner") // czyli w bazie danych nie bedzie kolumny pet_id w tabeli owners? A bedzie owner_id w tabeli pets? // owner może mieć wiele zwierząt, więc chyba i tak by się nie dało napisać pet_id (bo jest wiele)?
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner") // czyli w bazie danych nie bedzie kolumny pet_id w tabeli owners? A bedzie owner_id w tabeli pets? // owner może mieć wiele zwierząt, więc chyba i tak by się nie dało napisać pet_id (bo jest wiele)? To chyba nie jest problem
     private Set<Pet> pets = new HashSet<>();
 
     public String getAddress() {

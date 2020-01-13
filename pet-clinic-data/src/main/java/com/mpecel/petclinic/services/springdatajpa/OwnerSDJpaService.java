@@ -43,7 +43,7 @@ public class OwnerSDJpaService implements OwnerService {
     @Override
     public Owner findById(Long aLong) {
         return ownerRepository.findById(aLong).orElse(null);
-    }
+    } // ugly, but let's keep it like this for now.
 
     @Override
     public Owner save(Owner object) {

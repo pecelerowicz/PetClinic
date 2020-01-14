@@ -5,11 +5,13 @@ import com.mpecel.petclinic.model.Pet;
 import com.mpecel.petclinic.services.OwnerService;
 import com.mpecel.petclinic.services.PetService;
 import com.mpecel.petclinic.services.PetTypeService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 @Service
+@Profile({"default", "map"}) // if we had only map, default would be inactive in case of no profile set. That's why (to keep default active) we need to specify it explicitly.
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;
